@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Secrets — NEVER commit
+.env
+.env.local
+
+# Logs
+*.log
+logs/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# ngrok
+ngrok.yml
+
+# SSH keys
+*.pem
+*.key
+*.ppk
