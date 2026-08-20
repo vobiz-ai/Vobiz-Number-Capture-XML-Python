@@ -1,6 +1,6 @@
-# 08 — Phone Number Capture (DTMF + # Terminator)
+# Vobiz XML — Phone Number Capture (DTMF + # Terminator)
 
-Prompts the caller to enter a 10-digit phone number using their keypad, terminated by pressing `#`. The number is read back digit by digit and the caller confirms, re-enters, or cancels.
+A runnable Vobiz XML sample app (Python + FastAPI) that captures a caller's 10-digit phone number over the phone: Vobiz prompts the caller to enter the number on their keypad terminated by `#`, then reads it back digit by digit so the caller can confirm, re-enter, or cancel. Confirmed numbers are stored and exposed through a small lead/admin API.
 
 ## Call Flow
 
@@ -84,3 +84,22 @@ python server.py
 - `<Gather inputType="dtmf" finishOnKey="#" timeout="15">` — captures digits until `#`
 - `<Redirect>` — loops back on invalid input
 - `<Hangup>` — ends the call
+
+---
+
+## Built by Team Vobiz
+
+[Vobiz](https://vobiz.ai) is a programmable voice & SIP-trunking platform for
+voice APIs, SIP trunking, and AI voice agents. This repository is built and
+maintained by the Vobiz team.
+
+**Maintainer:** Piyush Sahoo — [piyush@vobiz.ai](mailto:piyush@vobiz.ai) · [LinkedIn](https://www.linkedin.com/in/piyush-s713/)
+
+Questions, or want to talk through an integration? Open an issue on this repo,
+or reach out directly at [piyush@vobiz.ai](mailto:piyush@vobiz.ai).
+
+**Useful links:** [Docs](https://docs.vobiz.ai) · [API reference](https://docs.vobiz.ai/api-reference) · [Sign up](https://vobiz.ai)
+
+## License
+
+[MIT](./LICENSE) © Vobiz
