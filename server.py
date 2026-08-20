@@ -12,7 +12,6 @@ VOBIZ calls:
   POST /answer                    → "Enter your 10-digit number followed by #"
   POST /number-received           → validate + read back
   POST /number-confirm            → handle confirm / re-enter / cancel
-  POST /number-received-repeat    → re-read number on invalid key
   POST /hangup
 """
 
@@ -28,7 +27,7 @@ from pyngrok import ngrok, conf
 
 from lead_store import LeadStore
 
-load_dotenv(dotenv_path="../../.env")
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
 
 HTTP_PORT = int(os.getenv("HTTP_PORT", "8000"))
 NGROK_AUTH_TOKEN = os.getenv("NGROK_AUTH_TOKEN", "")
@@ -121,7 +120,7 @@ async def answer(request: Request):
     <Gather action="{BASE_URL}/number-received" method="POST"
             inputType="dtmf"
             finishOnKey="#"
-            timeout="15">
+            executionTimeout="15">
         <Speak voice="WOMAN" language="en-US">
             Welcome! Please enter your 10-digit mobile number,
             followed by the hash key.
